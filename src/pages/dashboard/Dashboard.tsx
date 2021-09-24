@@ -1,5 +1,5 @@
-import { AiOutlineHome } from "react-icons/ai";
 import Navbar from "../../components/navbar/Navbar";
+import MainContent from "../../components/main-content/MainContent";
 import "./Dashboard.scss";
 
 const Dashboard = () => {
@@ -7,7 +7,7 @@ const Dashboard = () => {
     <>
       <div className="dashboard-wrapper">
         <Navbar />
-        <div className="main-content"></div>
+        <MainContent />
       </div>
     </>
   );

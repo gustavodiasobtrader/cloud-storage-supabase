@@ -1,3 +1,5 @@
+@import "../../global/colors.scss";
+
 .navbar-wrapper {
   background-color: #fafcfe;
 
@@ -7,7 +9,7 @@
 
     border-bottom-right-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
-    background-color: #2c3353;
+    background-color: $navbar-primary-bg;
 
     .items-wrapper {
       padding-top: 4.2rem;
@@ -23,16 +25,22 @@
         align-items: center;
 
         svg {
+          cursor: pointer;
           font-size: 2.8rem;
-          color: snow;
+          color: $navbar-icon-colors;
           padding: 0.6rem;
           border: 0px solid black;
-          border-radius: 14px;
+          border-radius: 0.8rem;
+          transition: 0.4s ease-in-out;
+        }
+
+        svg:hover {
+          background-color: $navbar-secondary-bg;
         }
       }
 
       .icon.active > svg {
-        background-color: #202849;
+        background-color: $navbar-secondary-bg;
       }
     }
   }
