@@ -62,3 +62,6 @@ export const getUserData = () => {
 export const getAuth = () => {
     return supabaseClient.auth;
 }
+
+//TODO: Create method to update user's meta-data
+//TODO: Create method to update user's password (when sign-up based on local provider)
