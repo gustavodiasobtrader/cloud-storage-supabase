@@ -2,9 +2,6 @@ import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
 import avatar from "../../assets/avatar.jpg";
 
-//FIXME: Ícone sumindo do header quando tela é diminuida
-//FIXME: Ajustar o CSS do input field
-
 const Header = () => {
   return (
     <>

@@ -1,0 +1,113 @@
+.files-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 3.4rem 0 5.2rem 0;
+  min-width: 960px;
+
+  .title {
+    p {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+
+  .custom-table {
+    margin-top: 1.8rem;
+    width: 100%;
+    height: auto;
+
+    .header-items {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      margin-bottom: 2rem;
+
+      p {
+        font-weight: bold;
+        color: slategrey;
+      }
+    }
+
+    .content-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      padding-bottom: 1.6rem;
+
+      .content-item {
+        .item-file-info {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .extension {
+            width: 3.6rem;
+            height: 3.6rem;
+            border-radius: 16px;
+            background-color: orange;
+          }
+
+          .name {
+            font-weight: bold;
+            color: slategray;
+            margin-left: 1.6rem;
+          }
+        }
+
+        .item-creation-date {
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          p {
+            font-weight: bold;
+            color: slategray;
+          }
+        }
+
+        .item-size {
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          p {
+            font-weight: bold;
+            color: slategray;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 574px) {
+  .files-table-wrapper {
+    overflow-x: scroll;
+  }
+}
+
+// Small devices
+@media (min-width: 576px) {
+  .files-table-wrapper {
+    overflow-x: scroll;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .files-table-wrapper {
+    overflow-x: scroll;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .files-table-wrapper {
+    overflow-x: hidden;
+  }
+}
+
+// FIXME: Adjust scrollbar overflow, appearence and when to appear
+// TODO: Create Pagination Function
+// TODO: Acoplate rows into a specific component (code and styles into different file/filder)

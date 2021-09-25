@@ -1,11 +1,30 @@
 @import "../../global/colors.scss";
 
 .dashboard-wrapper {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   height: auto;
   background-color: $dashboard-primary-bg;
 
   display: grid;
-  grid-template-columns: 5rem auto;
+}
+
+@media (min-width: 576px) {
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .dashboard-wrapper {
+    grid-template-columns: 5rem auto;
+  }
 }

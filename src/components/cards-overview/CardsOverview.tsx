@@ -28,10 +28,40 @@ const CardsOverview = () => {
             </div>
           </div>
           <div className="card">
-            <div className="card-content"></div>
+            <div className="card-content">
+              <div className="title-and-icon">
+                <div className="section-logo documents">
+                  <BiBook />
+                </div>
+
+                <p>Documents</p>
+              </div>
+
+              <div className="usage-info">
+                <p>24 GB of 50 GB used</p>
+                <div className="bar-status">
+                  <div className="bar-filler documents"></div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="card">
-            <div className="card-content"></div>
+            <div className="card-content">
+              <div className="title-and-icon">
+                <div className="section-logo music">
+                  <AiOutlinePlayCircle />
+                </div>
+
+                <p>Music</p>
+              </div>
+
+              <div className="usage-info">
+                <p>24 GB of 50 GB used</p>
+                <div className="bar-status">
+                  <div className="bar-filler music"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

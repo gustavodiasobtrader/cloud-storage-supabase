@@ -10,7 +10,6 @@
   .cards-wrapper {
     margin-top: 1.2rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 240px;
     gap: 3.4rem;
 
@@ -40,6 +39,14 @@
 
             &.images {
               background-color: #656dff;
+            }
+
+            &.documents {
+              background-color: #ffb469;
+            }
+
+            &.music {
+              background-color: #d666ff;
             }
 
             svg {
@@ -76,6 +83,20 @@
               background-color: #656dff;
               border-radius: 22px;
             }
+
+            .documents {
+              height: 100%;
+              width: 33%;
+              background-color: #ffb469;
+              border-radius: 22px;
+            }
+
+            .music {
+              height: 100%;
+              width: 33%;
+              background-color: #d666ff;
+              border-radius: 22px;
+            }
           }
         }
       }
@@ -83,7 +104,28 @@
   }
 }
 
-// TODO: Create styling for DOCUMENTS and MUSICS card
-// TODO: Add responsive design into layout
-// TODO: Adjust fonts and font-weights
+@media (max-width: 767px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 // TODO: Make bar percentages dynamic (storage feature dependancy)

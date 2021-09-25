@@ -6,12 +6,13 @@ import {
   AiOutlineTag,
   AiOutlineUpload,
 } from "react-icons/ai";
+import { HiMenuAlt2 } from "react-icons/hi";
 import { FiSettings } from "react-icons/fi";
 
 const Navbar = () => {
   return (
     <>
-      <div className="navbar-wrapper">
+      <div className="navbar-wrapper desktop">
         <div className="navbar">
           <div className="items-wrapper">
             <div className="icon active">
@@ -33,6 +34,12 @@ const Navbar = () => {
               <FiSettings />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="navbar-mobile">
+        <div className="icon">
+          <HiMenuAlt2 />
         </div>
       </div>
     </>

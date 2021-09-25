@@ -2,9 +2,7 @@
 
 .storage-overview-wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 
   margin-top: 2rem;
   min-height: 88px;
@@ -66,6 +64,8 @@
   .upload-button {
     width: 160px;
     cursor: pointer;
+    margin: 0;
+
     .button {
       height: 50px;
       background-color: $navbar-primary-bg;
@@ -96,6 +96,83 @@
       input {
         display: none;
       }
+    }
+  }
+}
+
+// Extra small devices
+@media (max-width: 574px) {
+  .storage-overview-wrapper {
+    flex-direction: column;
+
+    .title {
+      display: none;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: flex-start;
+      margin: 2.4rem 0;
+    }
+
+    .upload-button {
+      margin: 1.8rem 0;
+    }
+  }
+}
+
+// Small devices
+@media (min-width: 576px) {
+  .storage-overview-wrapper {
+    flex-direction: column;
+
+    .title {
+      display: none;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: flex-start;
+      margin: 2.4rem 0;
+    }
+
+    .upload-button {
+      margin: 1.8rem 0;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .storage-overview-wrapper {
+    flex-direction: column;
+
+    .title {
+      display: none;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: flex-start;
+      margin: 2.4rem 0;
+    }
+
+    .upload-button {
+      margin: 1.8rem 0;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .storage-overview-wrapper {
+    flex-direction: row;
+    align-items: center;
+
+    .title {
+      display: block;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: center;
+      margin: 0;
     }
   }
 }
