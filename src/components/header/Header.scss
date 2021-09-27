@@ -1,0 +1,119 @@
+@import "../../global/colors.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .input-wrapper {
+    height: 2.6rem;
+    max-width: 520px;
+    background-color: $dashboard-header-input-background;
+    border-radius: 12px;
+
+    .custom-input {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+
+      svg {
+        margin-left: 0.8rem;
+      }
+      input {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        margin: 0 0.8rem;
+        width: -webkit-fill-available;
+        height: 82%;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      input::placeholder {
+        font-weight: bold;
+        font-size: 1rem;
+        color: $dashboard-header-input-placeholder;
+      }
+    }
+  }
+
+  .avatar-wrapper {
+    max-height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 12.6rem;
+    p {
+      font-weight: bold;
+    }
+    img {
+      height: 3.2rem;
+      width: 3.2rem;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 574px) {
+  .header {
+    flex-direction: column-reverse;
+
+    .input-wrapper {
+      margin-top: 2.2rem;
+      width: 100%;
+    }
+  }
+
+  .avatar-wrapper {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 576px) {
+  .header {
+    flex-direction: column-reverse;
+
+    .input-wrapper {
+      margin-top: 2.2rem;
+      width: 100%;
+    }
+  }
+
+  .avatar-wrapper {
+    flex-direction: row-reverse;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .header {
+    flex-direction: column-reverse;
+
+    .input-wrapper {
+      margin-top: 2.2rem;
+      width: 100%;
+    }
+  }
+
+  .avatar-wrapper {
+    flex-direction: row-reverse;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+
+    .input-wrapper {
+      width: 35%;
+      margin-top: 0rem;
+    }
+  }
+  .avatar-wrapper {
+    flex-direction: row;
+  }
+}

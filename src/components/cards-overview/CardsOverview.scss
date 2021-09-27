@@ -1,0 +1,131 @@
+.overview-wrapper {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  .cards-wrapper {
+    margin-top: 1.2rem;
+    display: grid;
+    grid-template-rows: 240px;
+    gap: 3.4rem;
+
+    .card {
+      background-color: #edf3f8;
+
+      .card-content {
+        height: 100%;
+        width: 100%;
+        padding: 1.8rem 4.6rem 1.8rem 1.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title-and-icon {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .section-logo {
+            width: 88px;
+            height: 88px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.images {
+              background-color: #656dff;
+            }
+
+            &.documents {
+              background-color: #ffb469;
+            }
+
+            &.music {
+              background-color: #d666ff;
+            }
+
+            svg {
+              color: white;
+              font-size: 2.2rem;
+            }
+          }
+
+          p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-left: 1.8rem;
+          }
+        }
+
+        .usage-info {
+          display: flex;
+          flex-direction: column;
+          p {
+            font-weight: bold;
+            font-size: 15px;
+            color: rgba(128, 128, 128, 0.7);
+          }
+          .bar-status {
+            margin-top: 0.8rem;
+            height: 12px;
+            width: 100%;
+            background-color: #dde7ef;
+            border-radius: 22px;
+
+            .images {
+              height: 100%;
+              width: 33%;
+              background-color: #656dff;
+              border-radius: 22px;
+            }
+
+            .documents {
+              height: 100%;
+              width: 33%;
+              background-color: #ffb469;
+              border-radius: 22px;
+            }
+
+            .music {
+              height: 100%;
+              width: 33%;
+              background-color: #d666ff;
+              border-radius: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// TODO: Make bar percentages dynamic (storage feature dependancy)

@@ -1,0 +1,178 @@
+@import "../../global/colors.scss";
+
+.storage-overview-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 2rem;
+  min-height: 88px;
+  height: auto;
+
+  .title {
+    p {
+      font-weight: bold;
+      font-size: 1.8rem;
+      letter-spacing: 0px;
+    }
+  }
+
+  .progress-bar-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      color: #fe8283;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding-right: 1rem;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background-color: #edf3f8;
+      width: 12rem;
+      border-radius: 20px;
+      display: flex;
+
+      .images-bar,
+      .docs-bar,
+      .audio-bar {
+        height: 100%;
+      }
+
+      /*TODO: Make width perfect dynamic (after bucket/upload services set-up) */
+      .images-bar {
+        background-color: #656dff;
+        width: 20%;
+      }
+
+      .docs-bar {
+        background-color: #ffb469;
+        width: 50%;
+      }
+
+      .audio-bar {
+        background-color: #d666ff;
+        width: 30%;
+      }
+    }
+  }
+
+  .upload-button {
+    width: 160px;
+    cursor: pointer;
+    margin: 0;
+
+    .button {
+      height: 50px;
+      background-color: $navbar-primary-bg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 26px;
+
+      .button-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+
+        svg {
+          color: white;
+          font-size: 1.4rem;
+        }
+      }
+      p {
+        color: white;
+        // font-weight: bolder;
+        letter-spacing: 0.3px;
+      }
+
+      input {
+        display: none;
+      }
+    }
+  }
+}
+
+// Extra small devices
+@media (max-width: 574px) {
+  .storage-overview-wrapper {
+    flex-direction: column;
+
+    .title {
+      display: none;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: flex-start;
+      margin: 2.4rem 0;
+    }
+
+    .upload-button {
+      margin: 1.8rem 0;
+    }
+  }
+}
+
+// Small devices
+@media (min-width: 576px) {
+  .storage-overview-wrapper {
+    flex-direction: column;
+
+    .title {
+      display: none;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: flex-start;
+      margin: 2.4rem 0;
+    }
+
+    .upload-button {
+      margin: 1.8rem 0;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .storage-overview-wrapper {
+    flex-direction: column;
+
+    .title {
+      display: none;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: flex-start;
+      margin: 2.4rem 0;
+    }
+
+    .upload-button {
+      margin: 1.8rem 0;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .storage-overview-wrapper {
+    flex-direction: row;
+    align-items: center;
+
+    .title {
+      display: block;
+    }
+
+    .progress-bar-wrapper {
+      justify-content: center;
+      margin: 0;
+    }
+  }
+}

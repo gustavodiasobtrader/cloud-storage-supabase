@@ -1,0 +1,50 @@
+@import "../../global/colors.scss";
+
+.dashboard-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-color: $dashboard-primary-bg;
+
+  display: grid;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8);*/
+    -webkit-border-radius: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #666;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (min-width: 576px) {
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .dashboard-wrapper {
+    grid-template-columns: auto;
+  }
+}
