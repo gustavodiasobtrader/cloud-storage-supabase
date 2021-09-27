@@ -8,8 +8,15 @@ import {
 } from "react-icons/ai";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { FiSettings } from "react-icons/fi";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [mobileOptionsShow, setMobileOptionsShow] = useState(false);
+
+  const changeOptionsShow = () => {
+    setMobileOptionsShow(!mobileOptionsShow);
+  };
+
   return (
     <>
       <div className="navbar-wrapper desktop">
@@ -38,8 +45,29 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-mobile">
-        <div className="icon">
+        <div className="icon" onClick={changeOptionsShow}>
           <HiMenuAlt2 />
+        </div>
+
+        <div className={`options ${mobileOptionsShow ? "show" : "hidden"}`}>
+          <div className="icon-mobile">
+            <AiOutlineHome />
+          </div>
+          <div className="icon-mobile">
+            <AiOutlineUpload />
+          </div>
+          <div className="icon-mobile">
+            <AiOutlineTag />
+          </div>
+          <div className="icon-mobile">
+            <AiOutlineBell />
+          </div>
+          <div className="icon-mobile">
+            <AiOutlineQuestionCircle />
+          </div>
+          <div className="icon-mobile">
+            <FiSettings />
+          </div>
         </div>
       </div>
     </>

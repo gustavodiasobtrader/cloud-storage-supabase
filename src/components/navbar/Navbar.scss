@@ -2,6 +2,9 @@
 
 .navbar-wrapper {
   background-color: #fafcfe;
+  position: fixed;
+  height: 100%;
+  width: 4.4rem;
 
   .navbar {
     width: 100%;
@@ -53,10 +56,50 @@
   height: 4rem;
   border-radius: 50%;
   background-color: $navbar-primary-bg;
-  top: 1.6rem;
-  right: 1.6rem;
+  top: 1.2rem;
+  right: 1.4rem;
   z-index: 5;
-  cursor: pointer;
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.4rem;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+
+    &.show {
+      transform: translateY(0px);
+      opacity: 1;
+
+      .icon-mobile {
+        cursor: pointer;
+      }
+    }
+
+    &.hidden {
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+
+    .icon-mobile {
+      background-color: #2c3353;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      z-index: 10;
+
+      svg {
+        font-size: 1.8rem;
+        color: white;
+      }
+    }
+  }
 
   .icon {
     display: flex;
@@ -64,6 +107,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    cursor: pointer;
 
     svg {
       font-size: 2.2rem;
@@ -111,6 +155,3 @@
     display: block;
   }
 }
-
-// TODO: Make desktop navbar fixed and adjust styling
-// TODO: Create navbar action and items after click

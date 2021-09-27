@@ -28,34 +28,42 @@ const FilesTable = () => {
           </div>
 
           {files.length
-            ? files.map((file) => {
-                return (
-                  <div className="content-row">
-                    <div className="content-item">
-                      <div className="item-file-info">
-                        <div className="extension"></div>
-                        <div className="name">Phone1551215121.png</div>
-                      </div>
-                    </div>
-                    <div className="content-item">
-                      <div className="item-creation-date">
-                        <p>April 4, 2020</p>
-                      </div>
-                    </div>
-                    <div className="content-item">
-                      <div className="item-size">
-                        <p>300 KB</p>
-                      </div>
-                    </div>
-                    <div className="content-item">
-                      <div className="item-creation-date">
-                        <p>April 4, 2020</p>
-                      </div>
-                    </div>
-                  </div>
-                );
+            ? files.map((file, index) => {
+                return <TableRow key={index} />;
               })
             : null}
+        </div>
+      </div>
+    </>
+  );
+};
+
+const TableRow = () => {
+  return (
+    <>
+      <div className="content-row">
+        <div className="content-item">
+          <div className="item-file-info">
+            <div className="extension">
+              <p>PNG</p>
+            </div>
+            <div className="name">Phone1551215121.png</div>
+          </div>
+        </div>
+        <div className="content-item">
+          <div className="item-creation-date">
+            <p>April 4, 2020</p>
+          </div>
+        </div>
+        <div className="content-item">
+          <div className="item-size">
+            <p>300 KB</p>
+          </div>
+        </div>
+        <div className="content-item">
+          <div className="item-creation-date">
+            <p>April 4, 2020</p>
+          </div>
         </div>
       </div>
     </>

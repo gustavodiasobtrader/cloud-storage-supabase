@@ -5,7 +5,6 @@
   margin: 2.4rem 4.6rem 0 4.6rem;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   scroll-behavior: smooth;
 }
 
@@ -33,6 +32,6 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .main-content-wrapper {
-    margin: 2.4rem 4.6rem 0 4.6rem;
+    margin: 2.4rem 4.6rem 0 8rem;
   }
 }
