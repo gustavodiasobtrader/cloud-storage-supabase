@@ -1,13 +1,19 @@
-import { mountStoreDevtool } from "simple-zustand-devtools";
+import { User } from "@supabase/gotrue-js";
 import create from "zustand";
 
-const USER_STORE = create<any>(SET => ({
+type Nullable<T> = T | undefined | null;
+
+interface UserStore {
+    user: Nullable<User>;
+    saveUser: (user: User) => void;
+    removeUser: () => void;
+}
+
+const USER_STORE = create<UserStore>(SET => ({
     user: null,
-    saveUser: (user: any) => SET(() => ({ user: user })),
+    saveUser: (user: User) => SET(() => ({ user: user })),
     removeUser: () => SET(() => ({ user: null }))
 }))
 
 
 export default USER_STORE;
-
-mountStoreDevtool('USER STORE', USER_STORE);

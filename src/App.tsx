@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
   const saveUser = USER_STORE((state) => state.saveUser);
+  const removeUser = USER_STORE((state) => state.removeUser);
   const user = USER_STORE((state) => state.user);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function App() {
         console.log(event);
 
         if (event === "SIGNED_OUT") {
-          saveUser(null);
+          removeUser();
         }
 
         if (event === "SIGNED_IN") {

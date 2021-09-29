@@ -59,10 +59,8 @@
 
   .bg-image {
     background-color: $authentication-page-primary-bg;
-
-    .particle-canvas {
-      height: 100vh;
-    }
+    background-image: url("../../assets/wavey-fingerprint.svg");
+    /* background by SVGBackgrounds.com */
   }
 }
 

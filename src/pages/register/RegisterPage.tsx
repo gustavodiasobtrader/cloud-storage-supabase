@@ -7,7 +7,6 @@ import supabaseClient from "../../services/supabase.service";
 import { useHistory } from "react-router";
 import { ICustomToastMessage } from "../../components/custom-toast/CustomToast";
 import openToast from "../../services/toast.service";
-import Particles from "react-particles-js";
 
 const RegisterPage = () => {
   const [registrationData, setRegistrationData] = useState({
@@ -21,7 +20,7 @@ const RegisterPage = () => {
   const [loader, setLoader] = useState(false);
   const history = useHistory();
 
-  const handleChange = useCallback((e) => {
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setRegistrationData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
@@ -76,9 +75,7 @@ const RegisterPage = () => {
       {loader ? <Loader /> : null}
 
       <div className="register-page-wrapper">
-        <div className="bg-image">
-          <Particles className="particle-canvas" />
-        </div>
+        <div className="bg-image"></div>
         <div className="register-form-wrapper">
           <form>
             <div className="form-field">
