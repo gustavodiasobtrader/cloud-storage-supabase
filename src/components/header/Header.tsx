@@ -1,8 +1,11 @@
 import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
 import avatar from "../../assets/avatar.jpg";
+import USER_STORE from "../../store/user.store";
 
 const Header = () => {
+  const user = USER_STORE((state) => state.user);
+
   return (
     <>
       <div className="header">
@@ -14,7 +17,7 @@ const Header = () => {
         </div>
 
         <div className="avatar-wrapper">
-          <p>Anatoly Varakov</p>
+          <p>{`${user.user_metadata.firstName.toLowerCase()} ${user.user_metadata.lastName.toLowerCase()}`}</p>
           <img src={avatar} alt="User avatar" />
         </div>
       </div>

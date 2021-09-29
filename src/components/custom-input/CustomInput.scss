@@ -1,0 +1,32 @@
+@import "../../global/colors.scss";
+
+.custom-input-wrapper {
+  width: auto;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding-bottom: 0.5rem;
+    font-size: 14px;
+  }
+
+  input {
+    height: 2.5rem;
+    padding: 0 0.8rem;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f3f3;
+    outline: none;
+    border: 1.2px solid slategray;
+    border-radius: 5px;
+    color: $authentication-page-primary-bg;
+  }
+
+  input:focus {
+    border: 1.6px solid $authentication-page-primary-bg;
+  }
+}

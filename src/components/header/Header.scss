@@ -43,9 +43,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 12.6rem;
+    width: 11rem;
     p {
       font-weight: bold;
+
+      &::first-line {
+        text-transform: capitalize;
+      }
     }
     img {
       height: 3.2rem;

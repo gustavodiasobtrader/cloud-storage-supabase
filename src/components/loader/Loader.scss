@@ -1,0 +1,29 @@
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  .loader-content {
+    svg {
+      color: white;
+      font-size: 3.3rem;
+      animation: rotating 2s linear infinite;
+    }
+  }
+
+  @keyframes rotating {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+}
