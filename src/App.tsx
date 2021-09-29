@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard";
 import PrivateRoute from "./hoc/PrivateRoute";
 import LoginPage from "./pages/login/LoginPage";
@@ -11,6 +16,7 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
   const saveUser = USER_STORE((state) => state.saveUser);
+  const removeUser = USER_STORE((state) => state.removeUser);
   const user = USER_STORE((state) => state.user);
 
   useEffect(() => {
@@ -19,7 +25,7 @@ function App() {
         console.log(event);
 
         if (event === "SIGNED_OUT") {
-          saveUser(null);
+          removeUser();
         }
 
         if (event === "SIGNED_IN") {
@@ -52,6 +58,10 @@ function App() {
 
       <Router>
         <Switch>
+          <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
+
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage} />
           <PrivateRoute

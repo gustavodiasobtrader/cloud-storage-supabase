@@ -3,7 +3,7 @@ import Header from "../header/Header";
 import StorageOverview from "../storage-overview/StorageOverview";
 import CardsOverview from "../cards-overview/CardsOverview";
 import FilesTable from "../files-table/FilesTable";
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import USER_STORE from "../../store/user.store";
 import supabaseClient from "../../services/supabase.service";
 import openToast from "../../services/toast.service";
@@ -16,7 +16,7 @@ const MainContent = () => {
   const [loader, setLoader] = useState(false);
 
   const handleFile = useCallback(
-    async (e: any) => {
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
       setLoader(true);
 
       const file = e.target.files[0];

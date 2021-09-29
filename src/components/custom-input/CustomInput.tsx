@@ -1,3 +1,4 @@
+import React from "react";
 import "./CustomInput.scss";
 
 interface IProps {
@@ -8,7 +9,7 @@ interface IProps {
   isValid?: boolean;
   type?: string;
 
-  handleChange: (e: any) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CustomInput = (props: IProps) => {

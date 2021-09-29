@@ -7,7 +7,6 @@ import { useHistory } from "react-router";
 import supabaseClient from "../../services/supabase.service";
 import openToast from "../../services/toast.service";
 import { ICustomToastMessage } from "../../components/custom-toast/CustomToast";
-import Particles from "react-particles-js";
 
 const LoginPage = () => {
   const history = useHistory();
@@ -62,35 +61,23 @@ const LoginPage = () => {
     openToast(message);
   }
 
+  function redirectToSignup() {
+    history.push("/register");
+  }
+
   return (
     <>
       {loader ? <Loader /> : null}
 
       <div className="login-page-wrapper">
-        <div className="bg-image">
-          <Particles
-            className="particle-canvas"
-            params={{
-              particles: {
-                number: {
-                  value: 50,
-                },
-                size: {
-                  value: 3,
-                },
-              },
-              interactivity: {
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: "repulse",
-                  },
-                },
-              },
-            }}
-          />
-        </div>
+        <div className="bg-image"></div>
         <div className="login-form-wrapper">
+          <div className="sign-up">
+            <p>
+              Not registered yet?{" "}
+              <span onClick={redirectToSignup}>Sign up!</span>
+            </p>
+          </div>
           <form>
             <div className="form-field-isolated">
               <CustomInput

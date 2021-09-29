@@ -1,9 +1,9 @@
 import "./StorageOverview.scss";
 import { AiOutlineCloudUpload } from "react-icons/ai";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 interface IProps {
-  handleFile: (e: any) => void;
+  handleFile: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const StorageOverview = (props: IProps) => {
@@ -11,7 +11,7 @@ const StorageOverview = (props: IProps) => {
 
   function triggerFile() {
     if (inputRef) {
-      const input: any = inputRef.current;
+      const input = inputRef.current;
 
       input.click();
     }
@@ -43,7 +43,7 @@ const StorageOverview = (props: IProps) => {
               accept=".mp3, .mp4. .pdf, .jpg, .png, .doc"
               ref={inputRef}
               type="file"
-              onChange={props.handleFile}
+              onChange={(e) => props.handleFile(e)}
             />
           </div>
         </div>

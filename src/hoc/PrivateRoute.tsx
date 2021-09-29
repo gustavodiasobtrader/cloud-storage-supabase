@@ -1,8 +1,8 @@
 import { Route, Redirect } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 
 interface IProps {
-  component: any;
+  component: React.ComponentType;
   path: string;
   isAuthenticated: boolean;
 }
