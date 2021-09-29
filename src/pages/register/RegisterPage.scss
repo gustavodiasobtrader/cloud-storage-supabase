@@ -1,0 +1,107 @@
+@import "../../mixins/breakpoints.scss";
+@import "../../global/colors.scss";
+
+.register-page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+
+  .register-form-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+      .button-wrapper {
+        height: 3rem;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $authentication-page-primary-bg;
+        margin-top: 1.4rem;
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+
+        p {
+          color: white;
+          font-size: 16px;
+        }
+
+        svg {
+          color: white;
+        }
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.6rem;
+        min-width: 482px;
+        max-width: 560px;
+      }
+
+      .form-field-isolated {
+        display: block;
+        margin-top: 1.6rem;
+        min-width: 482px;
+        max-width: 560px;
+      }
+    }
+  }
+
+  .bg-image {
+    background-color: $authentication-page-primary-bg;
+
+    .particle-canvas {
+      height: 100vh;
+    }
+  }
+}
+
+@include xs-mobile() {
+  .bg-image {
+    display: none;
+  }
+}
+
+@include mobile() {
+  .bg-image {
+    display: none;
+  }
+}
+
+@include tablet() {
+  .register-page-wrapper {
+    grid-template-columns: 30% 70%;
+  }
+
+  .bg-image {
+    display: block;
+  }
+}
+
+@include desktop() {
+  .register-page-wrapper {
+    grid-template-columns: 40% 60%;
+
+    form {
+      max-width: 520px;
+      width: 58%;
+      height: 92%;
+    }
+  }
+
+  .bg-image {
+    display: block;
+  }
+}
+
+// TODO: REGISTER - Redo responsiveness on screen and input field

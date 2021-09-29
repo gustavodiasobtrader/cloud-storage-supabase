@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300;400;500;700&display=swap");
+@import "react-toastify/dist/ReactToastify.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +13,12 @@ html {
 
 html,
 * {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans Display", sans-serif;
+}
+
+.Toastify__toast-container {
+  max-width: 386px;
+  width: auto;
 }
 ::-webkit-scrollbar {
   width: 8px;

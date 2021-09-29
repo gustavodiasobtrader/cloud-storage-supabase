@@ -1,20 +1,24 @@
 import "./Navbar.scss";
-import {
-  AiOutlineBell,
-  AiOutlineHome,
-  AiOutlineQuestionCircle,
-  AiOutlineTag,
-  AiOutlineUpload,
-} from "react-icons/ai";
+import { AiOutlineBell, AiOutlineHome, AiOutlineUpload } from "react-icons/ai";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { FiSettings } from "react-icons/fi";
+import { VscSignOut } from "react-icons/vsc";
 import { useState } from "react";
+import supabaseClient from "../../services/supabase.service";
+import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileOptionsShow, setMobileOptionsShow] = useState(false);
+  const history = useHistory();
 
   const changeOptionsShow = () => {
     setMobileOptionsShow(!mobileOptionsShow);
+  };
+
+  const signout = async () => {
+    await supabaseClient.auth.signOut();
+
+    history.push("/login");
   };
 
   return (
@@ -28,17 +32,15 @@ const Navbar = () => {
             <div className="icon">
               <AiOutlineUpload />
             </div>
-            <div className="icon">
-              <AiOutlineTag />
-            </div>
+
             <div className="icon">
               <AiOutlineBell />
             </div>
             <div className="icon">
-              <AiOutlineQuestionCircle />
-            </div>
-            <div className="icon">
               <FiSettings />
+            </div>
+            <div className="icon" onClick={signout}>
+              <VscSignOut />
             </div>
           </div>
         </div>
@@ -56,17 +58,15 @@ const Navbar = () => {
           <div className="icon-mobile">
             <AiOutlineUpload />
           </div>
-          <div className="icon-mobile">
-            <AiOutlineTag />
-          </div>
+
           <div className="icon-mobile">
             <AiOutlineBell />
           </div>
           <div className="icon-mobile">
-            <AiOutlineQuestionCircle />
+            <FiSettings />
           </div>
           <div className="icon-mobile">
-            <FiSettings />
+            <VscSignOut />
           </div>
         </div>
       </div>
