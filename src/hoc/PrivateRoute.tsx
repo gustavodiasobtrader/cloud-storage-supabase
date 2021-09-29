@@ -1,5 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
-import { ReactElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface IProps {
   component: React.ComponentType;
