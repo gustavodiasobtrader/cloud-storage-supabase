@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard";
 import PrivateRoute from "./hoc/PrivateRoute";
 import LoginPage from "./pages/login/LoginPage";
@@ -53,6 +58,10 @@ function App() {
 
       <Router>
         <Switch>
+          <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
+
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage} />
           <PrivateRoute
